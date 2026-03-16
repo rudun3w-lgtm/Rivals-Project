@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local LP = Players.LocalPlayer
 
 local success, whitelistData = pcall(function()
-    return HttpService:JSONDecode(game:HttpGet("https://raw.githubusercontent.com/USER/REPO/main/access.json"))
+    return HttpService:JSONDecode(game:HttpGet("https://raw.githubusercontent.com/rudun3w-lgtm/Riflis-Project/refs/heads/main/access.json"))
 end)
 
 if not success or not whitelistData or not whitelistData.AllowedUsers then
