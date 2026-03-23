@@ -1,1 +1,1039 @@
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v24,v25) local v26={};for v41=1, #v24 do v6(v26,v0(v4(v1(v2(v24,v41,v41 + 1 )),v1(v2(v25,1 + (v41% #v25) ,1 + (v41% #v25) + 1 )))%256 ));end return v5(v26);end local v8=tonumber;local v9=string.byte;local v10=string.char;local v11=string.sub;local v12=string.gsub;local v13=string.rep;local v14=table.concat;local v15=table.insert;local v16=math.ldexp;local v17=getfenv or function() return _ENV;end ;local v18=setmetatable;local v19=pcall;local v20=select;local v21=unpack or table.unpack ;local v22=tonumber;local function v23(v27,v28,...) local v29=1;local v30;v27=v12(v11(v27,15 -10 ),v7("\225\108","\160\207\66\22\220"),function(v42) if (v9(v42,5 -3 )==81) then local v102=0;while true do if (v102==0) then v30=v8(v11(v42,1,1));return "";end end else local v103=0;local v104;while true do if (v103==0) then v104=v10(v8(v42,16));if v30 then local v123=v13(v104,v30);v30=nil;return v123;else return v104;end break;end end end end);local function v31(v43,v44,v45) if v45 then local v105=0;local v106;while true do if (v105==0) then v106=(v43/(2^(v44-1)))%(2^(((v45-1) -(v44-1)) + 1)) ;return v106-(v106%1) ;end end else local v107=2^(v44-(1 -0)) ;return (((v43%(v107 + v107))>=v107) and (2 -1)) or 0 ;end end local function v32() local v46=v9(v27,v29,v29);v29=v29 + 1 ;return v46;end local function v33() local v47=0;local v48;local v49;while true do if (v47==0) then v48,v49=v9(v27,v29,v29 + 2 );v29=v29 + 2 ;v47=1;end if (v47==1) then return (v49 * 256) + v48 ;end end end local function v34() local v50=0;local v51;local v52;local v53;local v54;while true do if (v50==1) then return (v54 * 16777216) + (v53 * (66104 -(367 + 201))) + (v52 * 256) + v51 ;end if (v50==0) then v51,v52,v53,v54=v9(v27,v29,v29 + (622 -(555 + 64)) );v29=v29 + (935 -(857 + 74)) ;v50=1;end end end local function v35() local v55=0;local v56;local v57;local v58;local v59;local v60;local v61;while true do if (v55==3) then if (v60==0) then if (v59==(927 -(214 + 713))) then return v61 * 0 ;else v60=1 + 0 ;v58=0;end elseif (v60==2047) then return ((v59==0) and (v61 * (1/0))) or (v61 * NaN) ;end return v16(v61,v60-1023 ) * (v58 + (v59/(2^52))) ;end if (1==v55) then v58=1;v59=(v31(v57,1,20) * (2^32)) + v56 ;v55=2;end if (v55==2) then v60=v31(v57,21,31);v61=((v31(v57,32)==1) and  -1) or 1 ;v55=3;end if (v55==0) then v56=v34();v57=v34();v55=1;end end end local function v36(v62) local v63=0;local v64;local v65;while true do if (v63==0) then v64=nil;if  not v62 then local v118=0;while true do if (v118==0) then v62=v34();if (v62==0) then return "";end break;end end end v63=1;end if (v63==1) then v64=v11(v27,v29,(v29 + v62) -1 );v29=v29 + v62 ;v63=2;end if (v63==2) then v65={};for v111=1, #v64 do v65[v111]=v10(v9(v11(v64,v111,v111)));end v63=3;end if (3==v63) then return v14(v65);end end end local v37=v34;local function v38(...) return {...},v20("#",...);end local function v39() local v66={};local v67={};local v68={};local v69={v66,v67,nil,v68};local v70=v34();local v71={};for v79=1,v70 do local v80=0;local v81;local v82;while true do if (v80==0) then v81=v32();v82=nil;v80=1;end if (v80==1) then if (v81==1) then v82=v32()~=0 ;elseif (v81==2) then v82=v35();elseif (v81==3) then v82=v36();end v71[v79]=v82;break;end end end v69[3]=v32();for v83=1,v34() do local v84=0;local v85;while true do if (0==v84) then v85=v32();if (v31(v85,1,1)==0) then local v119=0;local v120;local v121;local v122;while true do if (v119==1) then v122={v33(),v33(),nil,nil};if (v120==0) then v122[3]=v33();v122[4]=v33();elseif (v120==1) then v122[3]=v34();elseif (v120==2) then v122[3]=v34() -(2^(22 -6)) ;elseif (v120==3) then local v417=0;while true do if (v417==0) then v122[3]=v34() -((1067 -(68 + 997))^16) ;v122[4]=v33();break;end end end v119=2;end if (v119==2) then if (v31(v121,1,1)==1) then v122[2]=v71[v122[2]];end if (v31(v121,2,2)==1) then v122[3]=v71[v122[3]];end v119=3;end if (v119==0) then v120=v31(v85,2,3);v121=v31(v85,881 -(282 + 595) ,1643 -(1523 + 114) );v119=1;end if (v119==3) then if (v31(v121,3,3)==1) then v122[4]=v71[v122[4]];end v66[v83]=v122;break;end end end break;end end end for v86=1,v34() do v67[v86-1 ]=v39();end return v69;end local function v40(v73,v74,v75) local v76=v73[1];local v77=v73[2];local v78=v73[3];return function(...) local v88=v76;local v89=v77;local v90=v78;local v91=v38;local v92=1;local v93= -1;local v94={};local v95={...};local v96=v20("#",...) -(1271 -(226 + 1044)) ;local v97={};local v98={};for v108=0,v96 do if (v108>=v90) then v94[v108-v90 ]=v95[v108 + 1 ];else v98[v108]=v95[v108 + 1 ];end end local v99=(v96-v90) + 1 ;local v100;local v101;while true do v100=v88[v92];v101=v100[1];if (v101<=(104 -80)) then if (v101<=11) then if (v101<=5) then if (v101<=2) then if (v101<=0) then do return v98[v100[2]]();end elseif (v101>1) then v98[v100[119 -(32 + 85) ]]=v40(v89[v100[3]],nil,v75);else local v197=0;local v198;local v199;local v200;local v201;while true do if (0==v197) then v198=nil;v199,v200=nil;v201=nil;v197=1;end if (v197==1) then v98[v100[2 + 0 ]]=v100[3];v92=v92 + 1 ;v100=v88[v92];v197=2;end if (v197==3) then v100=v88[v92];v98[v100[2]]=v100[3];v92=v92 + 1 ;v197=4;end if (v197==6) then v92=v92 + 1 ;v100=v88[v92];v201=v100[2];v197=7;end if (v197==2) then v201=v100[2];v98[v201]=v98[v201](v21(v98,v201 + 1 + 0 ,v100[3]));v92=v92 + 1 ;v197=3;end if (v197==8) then if (v98[v100[2]]==v100[4]) then v92=v92 + 1 ;else v92=v100[3];end break;end if (v197==5) then v93=(v200 + v201) -1 ;v198=0;for v499=v201,v93 do v198=v198 + 1 ;v98[v499]=v199[v198];end v197=6;end if (v197==4) then v100=v88[v92];v201=v100[2];v199,v200=v91(v98[v201](v21(v98,v201 + 1 ,v100[3])));v197=5;end if (v197==7) then v98[v201]=v98[v201](v21(v98,v201 + 1 ,v93));v92=v92 + 1 ;v100=v88[v92];v197=8;end end end elseif (v101<=3) then local v133=0;local v134;while true do if (v133==6) then v98[v134]=v98[v134](v98[v134 + 1 ]);v92=v92 + 1 ;v100=v88[v92];if (v98[v100[3 -1 ]]==v98[v100[354 -(87 + 263) ]]) then v92=v92 + 1 ;else v92=v100[3];end break;end if (v133==0) then v134=nil;v98[v100[2]]=v98[v100[3]];v92=v92 + 1 ;v100=v88[v92];v133=1;end if (v133==4) then v100=v88[v92];v98[v100[2]]=v98[v100[3]][v100[6 -2 ]];v92=v92 + 1 ;v100=v88[v92];v133=5;end if (5==v133) then v98[v100[2]]=v98[v100[3]][v100[4]];v92=v92 + 1 ;v100=v88[v92];v134=v100[2];v133=6;end if (v133==3) then v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]][v100[9 -5 ]];v92=v92 + 1 ;v133=4;end if (v133==2) then v98[v100[2]]=v75[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v75[v100[960 -(892 + 65) ]];v133=3;end if (v133==1) then v134=v100[2];v98[v134]=v98[v134](v98[v134 + 1 ]);v92=v92 + 1 ;v100=v88[v92];v133=2;end end elseif (v101==4) then if (v98[v100[2]]==v98[v100[4]]) then v92=v92 + 1 ;else v92=v100[3];end else local v202=v100[2];local v203,v204=v91(v98[v202](v98[v202 + 1 ]));v93=(v204 + v202) -1 ;local v205=0;for v312=v202,v93 do local v313=0;while true do if (v313==0) then v205=v205 + 1 ;v98[v312]=v203[v205];break;end end end end elseif (v101<=8) then if (v101<=6) then local v135=0;local v136;local v137;local v138;local v139;while true do if (v135==4) then v92=v92 + 1 ;v100=v88[v92];v139=v100[2];v137,v138=v91(v98[v139](v21(v98,v139 + 1 ,v93)));v93=(v138 + v139) -1 ;v135=5;end if (7==v135) then v100=v88[v92];v92=v100[3];break;end if (v135==5) then v136=0;for v402=v139,v93 do local v403=0;while true do if (v403==0) then v136=v136 + 1 ;v98[v402]=v137[v136];break;end end end v92=v92 + 1 ;v100=v88[v92];v139=v100[2];v135=6;end if (v135==0) then v136=nil;v137,v138=nil;v139=nil;v98[v100[2]]=v98[v100[3]];v92=v92 + 1 ;v135=1;end if (1==v135) then v100=v88[v92];v98[v100[182 -(67 + 113) ]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v100[3];v135=2;end if (6==v135) then v98[v139]=v98[v139](v21(v98,v139 + 1 ,v93));v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]();v92=v92 + 1 ;v135=7;end if (v135==3) then v139=v100[2];v137,v138=v91(v98[v139](v21(v98,v139 + 1 + 0 ,v100[3])));v93=(v138 + v139) -1 ;v136=0;for v404=v139,v93 do v136=v136 + 1 ;v98[v404]=v137[v136];end v135=4;end if (v135==2) then v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v100[3];v92=v92 + 1 ;v100=v88[v92];v135=3;end end elseif (v101==7) then if (v98[v100[2]]==v100[4]) then v92=v92 + 1 ;else v92=v100[3];end else local v206=0;local v207;local v208;local v209;local v210;while true do if (v206==2) then for v504=v207,v93 do local v505=0;while true do if (v505==0) then v210=v210 + 1 ;v98[v504]=v208[v210];break;end end end break;end if (v206==1) then v93=(v209 + v207) -1 ;v210=0;v206=2;end if (v206==0) then v207=v100[4 -2 ];v208,v209=v91(v98[v207](v21(v98,v207 + 1 ,v100[3])));v206=1;end end end elseif (v101<=9) then local v140;local v141;local v142;v98[v100[2]]=v75[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v75[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3 + 0 ]][v100[4]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v75[v100[3]];v92=v92 + (3 -2) ;v100=v88[v92];v98[v100[954 -(802 + 150) ]]=v98[v100[3]];v92=v92 + 1 ;v100=v88[v92];v142=v100[2];v141={v98[v142](v21(v98,v142 + 1 ,v100[3]))};v140=0;for v185=v142,v100[4] do v140=v140 + 1 ;v98[v185]=v141[v140];end v92=v92 + 1 ;v100=v88[v92];if v98[v100[2]] then v92=v92 + 1 ;else v92=v100[3];end elseif (v101>10) then v98[v100[2]]=v98[v100[3]]%v98[v100[4]] ;else v98[v100[2]]={};end elseif (v101<=17) then if (v101<=14) then if (v101<=12) then local v150;local v151;local v152,v153;local v154;v98[v100[2]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v74[v100[7 -4 ]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]={};v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v74[v100[3]];v92=v92 + (1 -0) ;v100=v88[v92];v98[v100[2]]=v98[v100[3]];v92=v92 + 1 ;v100=v88[v92];for v188=v100[2],v100[3 + 0 ] do v98[v188]=nil;end v92=v92 + 1 ;v100=v88[v92];v154=v100[2];v152,v153=v91(v98[v154](v21(v98,v154 + 1 ,v100[3])));v93=(v153 + v154) -1 ;v151=0;for v190=v154,v93 do local v191=0;while true do if (v191==0) then v151=v151 + 1 ;v98[v190]=v152[v151];break;end end end v92=v92 + (998 -(915 + 82)) ;v100=v88[v92];v154=v100[2];v150=v98[v154];for v192=v154 + 1 ,v93 do v15(v150,v98[v192]);end elseif (v101==13) then v98[v100[2]]();else v98[v100[2]]=v98[v100[3]] + v100[4] ;end elseif (v101<=15) then local v162=0;local v163;local v164;local v165;while true do if (v162==0) then v163=nil;v164=nil;v165=nil;v162=1;end if (v162==4) then v98[v100[2]]=v100[3];v92=v92 + 1 ;v100=v88[v92];v162=5;end if (v162==2) then v98[v100[2]]=v100[3];v92=v92 + (2 -1) ;v100=v88[v92];v162=3;end if (v162==3) then v98[v100[2]]= #v98[v100[3]];v92=v92 + 1 ;v100=v88[v92];v162=4;end if (v162==6) then if (v163>0) then if (v164>v98[v165 + 1 ]) then v92=v100[3];else v98[v165 + 3 ]=v164;end elseif (v164<v98[v165 + 1 ]) then v92=v100[3];else v98[v165 + 3 ]=v164;end break;end if (v162==5) then v165=v100[2];v164=v98[v165];v163=v98[v165 + 2 ];v162=6;end if (1==v162) then v98[v100[2]]={};v92=v92 + 1 ;v100=v88[v92];v162=2;end end elseif (v101==16) then if v98[v100[2]] then v92=v92 + 1 + 0 ;else v92=v100[3];end else v98[v100[2]]=v100[3];end elseif (v101<=20) then if (v101<=18) then local v166=0;local v167;local v168;local v169;local v170;local v171;while true do if (v166==8) then v171=v100[2];v98[v171](v21(v98,v171 + 1 ,v93));v92=v92 + 1 ;v100=v88[v92];v166=9;end if (0==v166) then v167=nil;v168,v169=nil;v170=nil;v171=nil;v166=1;end if (v166==5) then v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v100[3];v92=v92 + 1 ;v166=6;end if (v166==1) then v98[v100[2]]=v98[v100[3]][v100[4]];v92=v92 + (1 -0) ;v100=v88[v92];v98[v100[2]]=v98[v100[3]][v100[4]];v166=2;end if (v166==4) then v98[v100[2]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v100[3];v166=5;end if (v166==7) then v167=0;for v411=v171,v93 do local v412=0;while true do if (v412==0) then v167=v167 + 1 ;v98[v411]=v168[v167];break;end end end v92=v92 + (1188 -(1069 + 118)) ;v100=v88[v92];v166=8;end if (6==v166) then v100=v88[v92];v171=v100[2];v168,v169=v91(v98[v171](v21(v98,v171 + 1 ,v100[3])));v93=(v169 + v171) -1 ;v166=7;end if (v166==9) then v92=v100[3];break;end if (3==v166) then v98[v171 + 1 ]=v170;v98[v171]=v170[v100[4]];v92=v92 + 1 ;v100=v88[v92];v166=4;end if (v166==2) then v92=v92 + 1 ;v100=v88[v92];v171=v100[2];v170=v98[v100[3]];v166=3;end end elseif (v101==19) then v98[v100[2]]=v98[v100[6 -3 ]][v100[8 -4 ]];else local v219=v100[2];do return v98[v219](v21(v98,v219 + 1 ,v100[3]));end end elseif (v101<=22) then if (v101==21) then local v220=0;local v221;while true do if (v220==0) then v221=v100[2];v98[v221]=v98[v221](v98[v221 + 1 ]);break;end end else v98[v100[2]]=v98[v100[3]]%v100[4] ;end elseif (v101>23) then v92=v100[3];else local v224=v100[2];v98[v224]=v98[v224](v21(v98,v224 + 1 + 0 ,v93));end elseif (v101<=(65 -28)) then if (v101<=30) then if (v101<=27) then if (v101<=25) then v98[v100[2]]=v75[v100[3]];elseif (v101>26) then local v226=0;local v227;local v228;local v229;local v230;local v231;while true do if (v226==1) then v100=v88[v92];v231=v100[2];v230=v98[v100[3]];v98[v231 + 1 ]=v230;v98[v231]=v230[v100[4]];v92=v92 + 1 ;v100=v88[v92];v226=2;end if (12==v226) then v100=v88[v92];v92=v100[3];break;end if (v226==0) then v227=nil;v228=nil;v227,v229=nil;v230=nil;v231=nil;v98[v100[2]]=v75[v100[3]];v92=v92 + 1 ;v226=1;end if (v226==9) then for v506=v231,v93 do local v507=0;while true do if (v507==0) then v228=v228 + 1 ;v98[v506]=v227[v228];break;end end end v92=v92 + 1 ;v100=v88[v92];v231=v100[2];v98[v231]=v98[v231](v21(v98,v231 + 1 ,v93));v92=v92 + 1 ;v100=v88[v92];v226=10;end if (v226==3) then v92=v92 + 1 ;v100=v88[v92];v231=v100[2];v227,v229=v91(v98[v231](v21(v98,v231 + 1 ,v100[3])));v93=(v229 + v231) -(3 -2) ;v228=18 -(10 + 8) ;for v508=v231,v93 do local v509=0;while true do if (v509==0) then v228=v228 + 1 ;v98[v508]=v227[v228];break;end end end v226=4;end if (8==v226) then for v510=v231,v93 do local v511=0;while true do if (v511==0) then v228=v228 + 1 ;v98[v510]=v227[v228];break;end end end v92=v92 + 1 ;v100=v88[v92];v231=v100[2];v227,v229=v91(v98[v231](v21(v98,v231 + 1 ,v93)));v93=(v229 + v231) -1 ;v228=0;v226=9;end if (v226==6) then v100=v88[v92];v98[v100[2]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v100[4 -1 ];v92=v92 + 1 ;v100=v88[v92];v226=7;end if (v226==5) then v230=v98[v100[3]];v98[v231 + (443 -(416 + 26)) ]=v230;v98[v231]=v230[v100[4]];v92=v92 + (3 -2) ;v100=v88[v92];v98[v100[1 + 1 ]]=v98[v100[3]];v92=v92 + 1 ;v226=6;end if (4==v226) then v92=v92 + 1 ;v100=v88[v92];v231=v100[2];v98[v231]=v98[v231](v21(v98,v231 + 1 ,v93));v92=v92 + (3 -2) ;v100=v88[v92];v231=v100[2];v226=5;end if (v226==11) then v92=v92 + 1 ;v100=v88[v92];v231=v100[2];v227={v98[v231](v98[v231 + 1 ])};v228=0;for v512=v231,v100[434 -(44 + 386) ] do v228=v228 + 1 ;v98[v512]=v227[v228];end v92=v92 + 1 ;v226=12;end if (v226==2) then v98[v100[2]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2 + 0 ]]=v100[3];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v100[794 -(368 + 423) ];v226=3;end if (v226==10) then v98[v100[2]]=v100[3]~=0 ;v92=v92 + (439 -(145 + 293)) ;v100=v88[v92];v98[v100[2]]=v75[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]];v226=11;end if (v226==7) then v98[v100[2]]=v100[3];v92=v92 + 1 ;v100=v88[v92];v231=v100[2];v227,v229=v91(v98[v231](v21(v98,v231 + 1 ,v100[3])));v93=(v229 + v231) -1 ;v228=0;v226=8;end end else local v232=0;local v233;local v234;local v235;while true do if (v232==0) then v233=v100[2];v234={v98[v233](v21(v98,v233 + 1 ,v100[3]))};v232=1;end if (v232==1) then v235=0;for v515=v233,v100[4] do local v516=0;while true do if (v516==0) then v235=v235 + 1 ;v98[v515]=v234[v235];break;end end end break;end end end elseif (v101<=28) then local v174=v100[2];local v175={v98[v174](v98[v174 + 1 ])};local v176=0;for v193=v174,v100[4] do v176=v176 + 1 ;v98[v193]=v175[v176];end elseif (v101>(10 + 19)) then local v236=v100[2];local v237,v238=v91(v98[v236](v21(v98,v236 + 1 ,v93)));v93=(v238 + v236) -1 ;local v239=0;for v369=v236,v93 do v239=v239 + 1 ;v98[v369]=v237[v239];end else do return;end end elseif (v101<=33) then if (v101<=31) then v98[v100[2]]=v100[3 + 0 ]~=0 ;elseif (v101==32) then v98[v100[2]]=v75[v100[775 -(201 + 571) ]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]][v100[4]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v75[v100[3]];v92=v92 + (1139 -(116 + 1022)) ;v100=v88[v92];v98[v100[2]]=v98[v100[3]][v100[4]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v75[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]][v100[4]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v75[v100[3]];v92=v92 + 1 ;v100=v88[v92];if  not v98[v100[2]] then v92=v92 + 1 ;else v92=v100[3];end else local v245=0;local v246;local v247;local v248;while true do if (v245==2) then if (v247>(0 -0)) then if (v248<=v98[v246 + 1 ]) then v92=v100[3];v98[v246 + 3 ]=v248;end elseif (v248>=v98[v246 + 1 ]) then v92=v100[3];v98[v246 + 3 ]=v248;end break;end if (v245==1) then v248=v98[v246] + v247 ;v98[v246]=v248;v245=2;end if (v245==0) then v246=v100[2];v247=v98[v246 + 2 ];v245=1;end end end elseif (v101<=35) then if (v101>34) then local v249;local v250,v251;local v252;v98[v100[2]]=v98[v100[3]];v92=v92 + 1 + 0 ;v100=v88[v92];v98[v100[7 -5 ]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v74[v100[3]];v92=v92 + (3 -2) ;v100=v88[v92];v98[v100[2]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[861 -(814 + 45) ]]=v98[v100[3]] + v100[4] ;v92=v92 + 1 ;v100=v88[v92];v252=v100[2];v250,v251=v91(v98[v252](v21(v98,v252 + 1 ,v100[3])));v93=(v251 + v252) -1 ;v249=0;for v372=v252,v93 do v249=v249 + 1 ;v98[v372]=v250[v249];end v92=v92 + 1 ;v100=v88[v92];v252=v100[2];v98[v252]=v98[v252](v21(v98,v252 + 1 ,v93));v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v74[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v74[v100[7 -4 ]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]= #v98[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]]%v98[v100[4]] ;v92=v92 + 1 + 0 ;v100=v88[v92];v98[v100[1 + 1 ]]=v100[3] + v98[v100[4]] ;v92=v92 + (886 -(261 + 624)) ;v100=v88[v92];v98[v100[2]]= #v98[v100[3]];v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]]%v98[v100[4]] ;v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v100[3] + v98[v100[6 -2 ]] ;v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]] + v100[4] ;v92=v92 + 1 ;v100=v88[v92];v252=v100[2];v250,v251=v91(v98[v252](v21(v98,v252 + (1081 -(1020 + 60)) ,v100[3])));v93=(v251 + v252) -1 ;v249=0;for v375=v252,v93 do local v376=0;while true do if (v376==0) then v249=v249 + (1424 -(630 + 793)) ;v98[v375]=v250[v249];break;end end end v92=v92 + 1 ;v100=v88[v92];v252=v100[2];v250,v251=v91(v98[v252](v21(v98,v252 + 1 ,v93)));v93=(v251 + v252) -1 ;v249=0;for v377=v252,v93 do local v378=0;while true do if (v378==0) then v249=v249 + 1 ;v98[v377]=v250[v249];break;end end end v92=v92 + 1 ;v100=v88[v92];v252=v100[2];v98[v252]=v98[v252](v21(v98,v252 + (3 -2) ,v93));v92=v92 + 1 ;v100=v88[v92];v98[v100[2]]=v98[v100[3]]%v100[4] ;v92=v92 + 1 ;v100=v88[v92];v252=v100[2];v250,v251=v91(v98[v252](v98[v252 + 1 ]));v93=(v251 + v252) -1 ;v249=0;for v379=v252,v93 do local v380=0;while true do if (v380==0) then v249=v249 + 1 ;v98[v379]=v250[v249];break;end end end v92=v92 + 1 ;v100=v88[v92];v252=v100[2];v98[v252](v21(v98,v252 + 1 ,v93));elseif  not v98[v100[2]] then v92=v92 + (4 -3) ;else v92=v100[3];end elseif (v101==36) then local v263=v100[2];local v264=v100[4];local v265=v263 + 2 ;local v266={v98[v263](v98[v263 + 1 ],v98[v265])};for v381=1,v264 do v98[v265 + v381 ]=v266[v381];end local v267=v266[1];if v267 then local v415=0;while true do if (v415==0) then v98[v265]=v267;v92=v100[3];break;end end else v92=v92 + 1 ;end else v98[v100[1 + 1 ]]=v98[v100[3]];end elseif (v101<=43) then if (v101<=40) then if (v101<=(130 -92)) then local v178=0;local v179;while true do if (v178==0) then v179=v100[2];v98[v179](v21(v98,v179 + 1 ,v93));break;end end elseif (v101==(1786 -(760 + 987))) then v98[v100[2]]=v100[3] + v98[v100[4]] ;else local v271=v89[v100[3]];local v272;local v273={};v272=v18({},{[v7("\67\34\206\29\134\121\5","\226\28\125\167\115")]=function(v385,v386) local v387=0;local v388;while true do if (v387==0) then v388=v273[v386];return v388[1914 -(1789 + 124) ][v388[768 -(745 + 21) ]];end end end,[v7("\196\213\249\195\245\43\140\255\239\239","\226\155\138\151\166\130\66")]=function(v389,v390,v391) local v392=0;local v393;while true do if (v392==0) then v393=v273[v390];v393[1][v393[2]]=v391;break;end end end});for v394=1,v100[2 + 2 ] do v92=v92 + 1 ;local v395=v88[v92];if (v395[1]==37) then v273[v394-1 ]={v98,v395[3]};else v273[v394-1 ]={v74,v395[3]};end v97[ #v97 + 1 ]=v273;end v98[v100[2]]=v40(v271,v272,v75);end elseif (v101<=41) then local v180=v100[2];do return v21(v98,v180,v180 + v100[3] );end elseif (v101==42) then local v275=0;local v276;local v277;local v278;while true do if (v275==1) then v278=v98[v276 + 2 ];if (v278>(0 -0)) then if (v277>v98[v276 + 1 ]) then v92=v100[1 + 2 ];else v98[v276 + 3 ]=v277;end elseif (v277<v98[v276 + 1 + 0 ]) then v92=v100[3];else v98[v276 + 3 ]=v277;end break;end if (v275==0) then v276=v100[2];v277=v98[v276];v275=1;end end else local v279=0;local v280;while true do if (v279==0) then v280=v100[1057 -(87 + 968) ];v98[v280]=v98[v280](v21(v98,v280 + 1 ,v100[3]));break;end end end elseif (v101<=46) then if (v101<=44) then local v181=0;local v182;local v183;while true do if (v181==0) then v182=v100[2];v183=v98[v182];v181=1;end if (1==v181) then for v416=v182 + 1 ,v93 do v15(v183,v98[v416]);end break;end end elseif (v101>45) then local v281=0;local v282;while true do if (v281==0) then v282=v100[8 -6 ];do return v21(v98,v282,v93);end break;end end else v98[v100[2]]= #v98[v100[3]];end elseif (v101<=48) then if (v101==47) then local v284=0;local v285;local v286;while true do if (v284==0) then v285=v100[2];v286=v98[v100[3]];v284=1;end if (v284==1) then v98[v285 + 1 ]=v286;v98[v285]=v286[v100[4]];break;end end else do return v98[v100[2]];end end elseif (v101==(45 + 4)) then v98[v100[4 -2 ]]=v74[v100[1416 -(447 + 966) ]];else for v399=v100[2],v100[3] do v98[v399]=nil;end end v92=v92 + 1 ;end end;end return v40(v39(),{},v28)(...);end return v23("LOL!0D3Q0003063Q00737472696E6703043Q006368617203043Q00627974652Q033Q0073756203053Q0062697433322Q033Q0062697403043Q0062786F7203053Q007461626C6503063Q00636F6E63617403063Q00696E7365727403053Q006D6174636803083Q00746F6E756D62657203053Q007063612Q6C00243Q0012203Q00013Q00206Q000200122Q000100013Q00202Q00010001000300122Q000200013Q00202Q00020002000400122Q000300053Q00062Q0003000A000100010004183Q000A0001001219000300063Q002013000400030007001219000500083Q002013000500050009001219000600083Q00201300060006000A00062800073Q000100062Q00253Q00064Q00258Q00253Q00044Q00253Q00014Q00253Q00024Q00253Q00053Q001219000800013Q00201300080008000B0012190009000C3Q001219000A000D3Q000628000B0001000100052Q00253Q00074Q00253Q00094Q00253Q00084Q00253Q000A4Q00253Q000B4Q0025000C000B6Q000C00014Q002E000C6Q001D3Q00013Q00023Q00023Q00026Q00F03F026Q00704002264Q000F00025Q00122Q000300016Q00045Q00122Q000500013Q00042Q0003002100012Q003100076Q0023000800026Q000900016Q000A00026Q000B00036Q000C00046Q000D8Q000E00063Q00202Q000F000600014Q000C000F6Q000B3Q00024Q000C00036Q000D00046Q000E00016Q000F00016Q000F0006000F00102Q000F0001000F4Q001000016Q00100006001000102Q00100001001000202Q0010001000014Q000D00106Q000C8Q000A3Q000200202Q000A000A00024Q0009000A6Q00073Q00010004210003000500012Q0031000300054Q0025000400024Q0014000300044Q002E00036Q001D3Q00017Q00043Q00027Q004003053Q003A25642B3A2Q033Q0025642B026Q00F03F001C3Q0006285Q000100012Q00318Q000C000100016Q000200026Q000300026Q00048Q000500036Q00068Q000700076Q000500076Q00043Q0001002013000400040001001201000500026Q00030005000200122Q000400036Q000200046Q00013Q000200262Q00010018000100040004183Q001800012Q002500016Q000A00026Q0014000100024Q002E00015Q0004183Q001B00012Q0031000100046Q000100014Q002E00016Q001D3Q00013Q00013Q00133Q0003043Q0067616D65030A3Q0047657453657276696365030B3Q00E53ED1C3752Q31DB23C6D603073Q0043AD4AA5B32654030A3Q004A534F4E4465636F646503593Q001EA8323EED0A590604BD3160F959024103BE333DFB42154618A82320EA1E15461BF3343BFA45181A01F12A29EA5D597B1FAA2722ED1D265B19B6232DEA1F044C10AF6926FB51125A59B12Q27F01F044000BD2A3DB05A05461803083Q002976DC464E9E307603053Q00706169727303083Q00746F737472696E6703073Q00506C6179657273030B3Q004C6F63616C506C6179657203063Q00557365724964030A3Q006C6F6164737472696E6703583Q00DEEFBF34018CB4E43613C1B5AC2D06DEEEA93101D3E9A82B1CC2FEA5305CD5F4A66B00C3FFBE2A41C1B6A72306DBB4992D04D7F7B86922C4F4A12111C2B4B92114C5B4A32113D2E8E42913DFF5E43711C4F2BB305CDAEEAA03053Q0072B69BCB4403043Q004B69636B030A3Q005DAAFED9453576B6ADB903063Q005613C5DE9826026Q00F03F013E3Q0006103Q003C00013Q0004183Q003C0001002Q0200015Q00121B000200013Q00202Q0002000200024Q00045Q00122Q000500033Q00122Q000600046Q000400066Q00023Q000200202Q0002000200054Q000400016Q00055Q00122Q000600063Q00122Q000700076Q000500076Q00048Q00023Q00024Q00035Q00122Q000400086Q000500026Q00040002000600044Q00240001001219000900094Q0003000A00086Q00090002000200122Q000A00093Q00122Q000B00013Q00202Q000B000B000A00202Q000B000B000B00202Q000B000B000C4Q000A0002000200062Q000900240001000A0004183Q002400012Q001F000300013Q0004183Q0026000100062400040017000100020004183Q001700010006100003003200013Q0004183Q003200010012190004000D4Q0006000500016Q00065Q00122Q0007000E3Q00122Q0008000F6Q000600086Q00058Q00043Q00024Q00040001000100044Q003D0001001219000400013Q00201200040004000A00202Q00040004000B00202Q0004000400104Q00065Q00122Q000700113Q00122Q000800126Q000600086Q00043Q000100044Q003D000100201300013Q00132Q001D3Q00013Q00013Q00033Q0003053Q007063612Q6C03043Q0067616D6503073Q00482Q7470476574010C3Q001209000100013Q00122Q000200023Q00202Q00020002000300122Q000300026Q00048Q00010004000200062Q0001000B00013Q0004183Q000B00010006100002000B00013Q0004183Q000B00012Q0030000200024Q001D3Q00017Q00",v17(),...);
+-- WHITELIST CHECK
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local LP = Players.LocalPlayer
+
+local success, whitelistData = pcall(function()
+    return HttpService:JSONDecode(game:HttpGet("https://raw.githubusercontent.com/rudun3w-lgtm/Rivals-Project/refs/heads/main/rivals.json"))
+end)
+
+if not success or not whitelistData or not whitelistData.AllowedUsers then
+    print("Access Denied")
+    return
+end
+
+local isWhitelisted = false
+for _, userId in ipairs(whitelistData.AllowedUsers) do
+    if userId == LP.UserId then
+        isWhitelisted = true
+        break
+    end
+end
+
+if not isWhitelisted then
+    print("Access Denied")
+    return
+end
+
+-- CORE SCRIPT
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local Workspace = game:GetService("Workspace")
+
+local Cam = Workspace.CurrentCamera
+local KC = Enum.KeyCode
+local V2 = Vector2.new
+local V3 = Vector3.new
+
+local LANG = "EN"
+local TRANSLATIONS = {
+    EN = {
+        Title = "Script By: Riflis Hub | V1",
+        Footer = "https://t.me/riflisscripts",
+        Tab1 = "RAGE",
+        Tab2 = "VISUALS",
+        Tab3 = "MOVEMENT",
+        Tab4 = "MISC",
+        Aimbot = "Aimbot [T]",
+        Hitboxes = "Hitboxes [Y]",
+        Glow = "Glow [E]",
+        Tracers = "Tracers [R]",
+        NamesESP = "Names ESP [G]",
+        AntiFreeze = "Anti-Freeze [H]",
+        Fly = "Fly [J]",
+        BunnyHop = "BunnyHop [K]",
+        InfJump = "Inf Jump [Z]",
+        Spinbot = "Spinbot [Q]",
+        NoClip = "NoClip [X]",
+        LangToggle = "Language: EN [P]"
+    },
+    RU = {
+        Title = "Скрипт от: Riflis Hub | V1",
+        Footer = "https://t.me/riflisscripts",
+        Tab1 = "ЯРОСТЬ",
+        Tab2 = "ВИЗУАЛЫ",
+        Tab3 = "ДВИЖЕНИЕ",
+        Tab4 = "РАЗНОЕ",
+        Aimbot = "Аимбот [T]",
+        Hitboxes = "Хитбоксы [Y]",
+        Glow = "Свечение [E]",
+        Tracers = "Трассеры [R]",
+        NamesESP = "Ники ESP [G]",
+        AntiFreeze = "Анти-Фриз [H]",
+        Fly = "Полёт [J]",
+        BunnyHop = "Банихоп [K]",
+        InfJump = "Беск. Прыжок [Z]",
+        Spinbot = "Спинбот [Q]",
+        NoClip = "НоуКлип [X]",
+        LangToggle = "Язык: RU [P]"
+    }
+}
+
+local function GetText(key)
+    return TRANSLATIONS[LANG][key] or key
+end
+
+local CFG = {
+    AFreezeRound = 0.28,
+    AFreezeLobby = 0.3,
+    AFreezeSprint = 0.8,
+    AFreezeJump = 32,
+    FlySpeed = 65,
+    FlySprint = 2.6,
+    FlyForce = 1e6,
+    BHopPower = 60,
+    AimFOV = 85,
+    AimMaxDist = 650,
+    AimBreakDist = 1105,
+    HitboxScale = 5.0,
+    TracerMaxDist = 700,
+    TracerThick = 1.2,
+    NameOffsetY = 2.8,
+    NameSize = 14,
+    NameMaxDist = 800,
+    SpinbotSpeed = 18000,
+    SpinbotMultiplier = 3.5,
+}
+
+local COL = {
+    BG = Color3.fromRGB(12, 12, 18),
+    BG2 = Color3.fromRGB(18, 18, 26),
+    Accent = Color3.fromRGB(200, 30, 30),
+    AccentDark = Color3.fromRGB(140, 20, 20),
+    Sidebar = Color3.fromRGB(8, 8, 12),
+    SidebarActive = Color3.fromRGB(200, 30, 30),
+    ON = Color3.fromRGB(50, 255, 120),
+    OFF = Color3.fromRGB(200, 48, 48),
+    BGOn = Color3.fromRGB(22, 45, 26),
+    BGOff = Color3.fromRGB(32, 10, 10),
+    TracerColor = Color3.fromRGB(255, 50, 50),
+    HitboxColor = Color3.fromRGB(255, 30, 30),
+    GlowFill = Color3.fromRGB(255, 0, 0),
+    GlowOutline = Color3.fromRGB(255, 255, 255),
+    ESPText = Color3.fromRGB(255, 255, 255),
+    ESPOutline = Color3.fromRGB(0, 0, 0),
+    TextPrimary = Color3.fromRGB(240, 240, 240),
+    TextSecondary = Color3.fromRGB(180, 180, 180),
+    TextDim = Color3.fromRGB(120, 120, 120),
+}
+
+local STATE = {MenuOpen = true, CurrentPage = 1, GameState = "Lobby"}
+local TOGGLE = {
+    Aimbot = false, Hitboxes = false,
+    Glow = false, Tracers = false, NamesESP = false,
+    AntiFreeze = false, Fly = false, BunnyHop = false, InfJump = false,
+    Spinbot = false, NoClip = false,
+}
+local KEYS = {
+    ToggleMenu = KC.L,
+    LangToggle = KC.P,
+    Tab1 = KC.One,
+    Tab2 = KC.Two,
+    Tab3 = KC.Three,
+    Tab4 = KC.Four,
+    Spinbot = KC.Q,
+    Glow = KC.E,
+    Tracers = KC.R,
+    Aimbot = KC.T,
+    Hitboxes = KC.Y,
+    NamesESP = KC.G,
+    AntiFreeze = KC.H,
+    Fly = KC.J,
+    BunnyHop = KC.K,
+    InfJump = KC.Z,
+    NoClip = KC.X,
+}
+
+local TracerLines = {}
+local NameLabels = {}
+local HighlightRefs = {}
+local HitboxOrig = {}
+local HitboxSelBox = {}
+local FlyBV, FlyConn, InfJumpConn, SharedHBConn, SpinbotConn = nil, nil, nil, nil, nil
+local AimTarget = nil
+local LPRoot = nil
+local SpinAngle = 0
+local SpinbotBodyVelocity = nil
+
+do
+    local c = LP.Character
+    if c then LPRoot = c:FindFirstChild("HumanoidRootPart") end
+end
+LP.CharacterAdded:Connect(function(char)
+    LPRoot = char:WaitForChild("HumanoidRootPart", 8)
+end)
+
+local function EnableSpinbot()
+    TOGGLE.Spinbot = true
+    SpinAngle = 0
+    
+    if SpinbotConn then SpinbotConn:Disconnect() end
+    
+    SpinbotConn = RunService.RenderStepped:Connect(function(dt)
+        if not TOGGLE.Spinbot then return end
+        
+        pcall(function()
+            local char = LP.Character
+            if not char then return end
+            
+            local root = char:FindFirstChild("HumanoidRootPart")
+            if not root then return end
+            
+            local rotationIncrement = (CFG.SpinbotSpeed * dt) * CFG.SpinbotMultiplier
+            SpinAngle = SpinAngle + rotationIncrement
+            
+            if SpinAngle >= 360 then 
+                SpinAngle = SpinAngle - 360 
+            end
+            
+            local radians = math.rad(SpinAngle)
+            local lockedPosition = root.Position
+            root.CFrame = CFrame.new(lockedPosition) * CFrame.Angles(0, radians, 0)
+            
+            if not SpinbotBodyVelocity or SpinbotBodyVelocity.Parent ~= root then
+                if SpinbotBodyVelocity then
+                    pcall(function() SpinbotBodyVelocity:Destroy() end)
+                end
+                
+                SpinbotBodyVelocity = Instance.new("BodyVelocity")
+                SpinbotBodyVelocity.Name = "RiflisHyperSpinLock"
+                SpinbotBodyVelocity.MaxForce = V3(0, 0, 0)
+                SpinbotBodyVelocity.Velocity = V3(0, 0, 0)
+                SpinbotBodyVelocity.P = 0
+                SpinbotBodyVelocity.Parent = root
+            end
+            
+            if root.AssemblyLinearVelocity.Magnitude > 0.1 then
+                local vel = root.AssemblyLinearVelocity
+                if vel.Magnitude > 100 then
+                    root.AssemblyLinearVelocity = V3(0, vel.Y, 0)
+                end
+            end
+        end)
+    end)
+end
+
+local function DisableSpinbot()
+    TOGGLE.Spinbot = false
+    
+    if SpinbotConn then
+        SpinbotConn:Disconnect()
+        SpinbotConn = nil
+    end
+    
+    SpinAngle = 0
+    
+    if SpinbotBodyVelocity then
+        pcall(function() 
+            SpinbotBodyVelocity:Destroy() 
+        end)
+        SpinbotBodyVelocity = nil
+    end
+    
+    pcall(function()
+        local char = LP.Character
+        if char then
+            local root = char:FindFirstChild("HumanoidRootPart")
+            if root then
+                for _, obj in ipairs(root:GetChildren()) do
+                    if obj.Name == "RiflisHyperSpinLock" and obj:IsA("BodyVelocity") then
+                        obj:Destroy()
+                    end
+                end
+                
+                root.AssemblyLinearVelocity = V3(0, 0, 0)
+                root.AssemblyAngularVelocity = V3(0, 0, 0)
+            end
+        end
+    end)
+end
+
+local SG = Instance.new("ScreenGui")
+SG.Name = "RiflisHub_V1_HyperSpeed"
+SG.ResetOnSpawn = false
+SG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SG.IgnoreGuiInset = true
+SG.Parent = LP:WaitForChild("PlayerGui")
+
+local function Corner(r, p) local c = Instance.new("UICorner"); c.CornerRadius = UDim.new(0, r); c.Parent = p; return c end
+local function Stroke(col, t, p) local s = Instance.new("UIStroke"); s.Color = col; s.Thickness = t; s.Parent = p; return s end
+local function Padding(l, r, t, b, p) local pd = Instance.new("UIPadding"); pd.PaddingLeft = UDim.new(0, l); pd.PaddingRight = UDim.new(0, r); pd.PaddingTop = UDim.new(0, t); pd.PaddingBottom = UDim.new(0, b); pd.Parent = p; return pd end
+
+local WelcomeNotif = Instance.new("Frame")
+WelcomeNotif.Name = "WelcomeNotif"
+WelcomeNotif.Size = UDim2.new(0, 440, 0, 105)
+WelcomeNotif.Position = UDim2.new(1, 0, 1, -125)
+WelcomeNotif.BackgroundColor3 = COL.BG
+WelcomeNotif.BorderSizePixel = 0
+WelcomeNotif.ZIndex = 250
+WelcomeNotif.BackgroundTransparency = 1
+WelcomeNotif.Parent = SG
+Corner(16, WelcomeNotif)
+local WelcomeStroke = Stroke(COL.Accent, 3, WelcomeNotif)
+WelcomeStroke.Transparency = 1
+
+local WelcomeGrad = Instance.new("UIGradient")
+WelcomeGrad.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(12, 12, 18)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(28, 28, 38))
+})
+WelcomeGrad.Rotation = 135
+WelcomeGrad.Parent = WelcomeNotif
+
+local WelcomeAccentBar = Instance.new("Frame")
+WelcomeAccentBar.Name = "AccentBar"
+WelcomeAccentBar.Size = UDim2.new(0, 7, 1, 0)
+WelcomeAccentBar.Position = UDim2.new(0, 0, 0, 0)
+WelcomeAccentBar.BackgroundColor3 = COL.Accent
+WelcomeAccentBar.BorderSizePixel = 0
+WelcomeAccentBar.ZIndex = 251
+WelcomeAccentBar.BackgroundTransparency = 1
+WelcomeAccentBar.Parent = WelcomeNotif
+Corner(16, WelcomeAccentBar)
+
+local WelcomeIcon = Instance.new("TextLabel")
+WelcomeIcon.Size = UDim2.new(0, 75, 0, 75)
+WelcomeIcon.Position = UDim2.new(0, 18, 0.5, -37)
+WelcomeIcon.BackgroundTransparency = 1
+WelcomeIcon.TextColor3 = COL.Accent
+WelcomeIcon.Font = Enum.Font.GothamBold
+WelcomeIcon.TextSize = 46
+WelcomeIcon.Text = "🔴"
+WelcomeIcon.ZIndex = 252
+WelcomeIcon.TextTransparency = 1
+WelcomeIcon.Parent = WelcomeNotif
+
+local WelcomeTitle = Instance.new("TextLabel")
+WelcomeTitle.Name = "WelcomeTitle"
+WelcomeTitle.Size = UDim2.new(1, -110, 0, 34)
+WelcomeTitle.Position = UDim2.new(0, 100, 0, 20)
+WelcomeTitle.BackgroundTransparency = 1
+WelcomeTitle.TextColor3 = COL.Accent
+WelcomeTitle.Font = Enum.Font.GothamBold
+WelcomeTitle.TextSize = 19
+WelcomeTitle.Text = "Riflis Hub Loaded!"
+WelcomeTitle.TextXAlignment = Enum.TextXAlignment.Left
+WelcomeTitle.ZIndex = 252
+WelcomeTitle.TextTransparency = 1
+WelcomeTitle.Parent = WelcomeNotif
+
+local WelcomeText = Instance.new("TextLabel")
+WelcomeText.Name = "WelcomeText"
+WelcomeText.Size = UDim2.new(1, -110, 0, 42)
+WelcomeText.Position = UDim2.new(0, 100, 0, 54)
+WelcomeText.BackgroundTransparency = 1
+WelcomeText.TextColor3 = COL.TextSecondary
+WelcomeText.Font = Enum.Font.Gotham
+WelcomeText.TextSize = 14
+WelcomeText.Text = "Press [L] to hide/show"
+WelcomeText.TextXAlignment = Enum.TextXAlignment.Left
+WelcomeText.TextYAlignment = Enum.TextYAlignment.Top
+WelcomeText.TextWrapped = true
+WelcomeText.ZIndex = 252
+WelcomeText.TextTransparency = 1
+WelcomeText.Parent = WelcomeNotif
+
+local function ShowWelcomeNotification()
+    task.spawn(function()
+        local tweenIn = TweenService:Create(WelcomeNotif, TweenInfo.new(0.8, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Position = UDim2.new(1, -460, 1, -125), BackgroundTransparency = 0})
+        local tweenStroke = TweenService:Create(WelcomeStroke, TweenInfo.new(0.8), {Transparency = 0})
+        local tweenBar = TweenService:Create(WelcomeAccentBar, TweenInfo.new(0.8), {BackgroundTransparency = 0})
+        local tweenTitle = TweenService:Create(WelcomeTitle, TweenInfo.new(0.8), {TextTransparency = 0})
+        local tweenText = TweenService:Create(WelcomeText, TweenInfo.new(0.8), {TextTransparency = 0})
+        local tweenIcon = TweenService:Create(WelcomeIcon, TweenInfo.new(0.8), {TextTransparency = 0})
+        
+        tweenIn:Play()
+        tweenStroke:Play()
+        tweenBar:Play()
+        tweenTitle:Play()
+        tweenText:Play()
+        tweenIcon:Play()
+        
+        task.wait(5)
+        
+        local tweenOut = TweenService:Create(WelcomeNotif, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Position = UDim2.new(1, 0, 1, -125), BackgroundTransparency = 1})
+        local tweenStrokeOut = TweenService:Create(WelcomeStroke, TweenInfo.new(0.6), {Transparency = 1})
+        local tweenBarOut = TweenService:Create(WelcomeAccentBar, TweenInfo.new(0.6), {BackgroundTransparency = 1})
+        local tweenTitleOut = TweenService:Create(WelcomeTitle, TweenInfo.new(0.6), {TextTransparency = 1})
+        local tweenTextOut = TweenService:Create(WelcomeText, TweenInfo.new(0.6), {TextTransparency = 1})
+        local tweenIconOut = TweenService:Create(WelcomeIcon, TweenInfo.new(0.6), {TextTransparency = 1})
+        
+        tweenOut:Play()
+        tweenStrokeOut:Play()
+        tweenBarOut:Play()
+        tweenTitleOut:Play()
+        tweenTextOut:Play()
+        tweenIconOut:Play()
+        
+        task.wait(0.7)
+        WelcomeNotif:Destroy()
+    end)
+end
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Size = UDim2.new(0, 520, 0, 480)
+MainFrame.Position = UDim2.new(0.5, -260, 0.5, -240)
+MainFrame.BackgroundColor3 = COL.BG
+MainFrame.BorderSizePixel = 0
+MainFrame.Active = true
+MainFrame.Draggable = true
+MainFrame.Parent = SG
+Corner(12, MainFrame)
+local MainFrameStroke = Stroke(COL.Accent, 2, MainFrame)
+
+local TitleBar = Instance.new("Frame")
+TitleBar.Name = "TitleBar"
+TitleBar.Size = UDim2.new(1, 0, 0, 45)
+TitleBar.BackgroundColor3 = COL.Accent
+TitleBar.BorderSizePixel = 0
+TitleBar.Parent = MainFrame
+Corner(12, TitleBar)
+
+local TitleGrad = Instance.new("UIGradient")
+TitleGrad.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(220, 35, 35)), ColorSequenceKeypoint.new(1, Color3.fromRGB(140, 15, 15))})
+TitleGrad.Rotation = 90
+TitleGrad.Parent = TitleBar
+
+local TitleLabel = Instance.new("TextLabel")
+TitleLabel.Size = UDim2.new(1, -20, 1, 0)
+TitleLabel.Position = UDim2.new(0, 15, 0, 0)
+TitleLabel.BackgroundTransparency = 1
+TitleLabel.TextColor3 = COL.TextPrimary
+TitleLabel.Font = Enum.Font.GothamBold
+TitleLabel.TextSize = 15
+TitleLabel.Text = GetText("Title")
+TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+TitleLabel.Parent = TitleBar
+
+local Sidebar = Instance.new("Frame")
+Sidebar.Name = "Sidebar"
+Sidebar.Size = UDim2.new(0, 70, 1, -45)
+Sidebar.Position = UDim2.new(0, 0, 0, 45)
+Sidebar.BackgroundColor3 = COL.Sidebar
+Sidebar.BorderSizePixel = 0
+Sidebar.Parent = MainFrame
+local SidebarList = Instance.new("UIListLayout"); SidebarList.SortOrder = Enum.SortOrder.LayoutOrder; SidebarList.Padding = UDim.new(0, 5); SidebarList.Parent = Sidebar
+Padding(5, 5, 10, 10, Sidebar)
+
+local ContentArea = Instance.new("Frame")
+ContentArea.Name = "ContentArea"
+ContentArea.Size = UDim2.new(1, -70, 1, -45)
+ContentArea.Position = UDim2.new(0, 70, 0, 45)
+ContentArea.BackgroundTransparency = 1
+ContentArea.Parent = MainFrame
+
+local Pages = {}
+for i = 1, 4 do
+    local page = Instance.new("Frame")
+    page.Name = "Page" .. i
+    page.Size = UDim2.new(1, 0, 1, -35)
+    page.Position = UDim2.new(0, 0, 0, 0)
+    page.BackgroundTransparency = 1
+    page.Visible = (i == 1)
+    page.Parent = ContentArea
+    Padding(15, 15, 15, 10, page)
+    local list = Instance.new("UIListLayout"); list.SortOrder = Enum.SortOrder.LayoutOrder; list.Padding = UDim.new(0, 8); list.Parent = page
+    Pages[i] = page
+end
+
+local Footer = Instance.new("TextLabel")
+Footer.Size = UDim2.new(1, -70, 0, 35)
+Footer.Position = UDim2.new(0, 70, 1, -35)
+Footer.BackgroundColor3 = COL.BG2
+Footer.BorderSizePixel = 0
+Footer.TextColor3 = COL.TextSecondary
+Footer.Font = Enum.Font.Gotham
+Footer.TextSize = 11
+Footer.Text = GetText("Footer")
+Footer.Parent = MainFrame
+
+local SidebarButtons = {}
+local SidebarData = {{icon = "[1]", labelKey = "Tab1", page = 1}, {icon = "[2]", labelKey = "Tab2", page = 2}, {icon = "[3]", labelKey = "Tab3", page = 3}, {icon = "[4]", labelKey = "Tab4", page = 4}}
+for i, data in ipairs(SidebarData) do
+    local btn = Instance.new("TextButton")
+    btn.Name = "SidebarBtn" .. i
+    btn.Size = UDim2.new(1, 0, 0, 70)
+    btn.BackgroundColor3 = (i == 1) and COL.SidebarActive or COL.Sidebar
+    btn.BorderSizePixel = 0
+    btn.Text = ""
+    btn.AutoButtonColor = false
+    btn.LayoutOrder = i
+    btn.Parent = Sidebar
+    Corner(8, btn)
+    local icon = Instance.new("TextLabel"); icon.Size = UDim2.new(1, 0, 0, 30); icon.Position = UDim2.new(0, 0, 0, 12); icon.BackgroundTransparency = 1; icon.TextColor3 = COL.TextPrimary; icon.Font = Enum.Font.GothamBold; icon.TextSize = 18; icon.Text = data.icon; icon.Parent = btn
+    local label = Instance.new("TextLabel"); label.Name = "SidebarLabel"; label.Size = UDim2.new(1, 0, 0, 16); label.Position = UDim2.new(0, 0, 1, -24); label.BackgroundTransparency = 1; label.TextColor3 = COL.TextSecondary; label.Font = Enum.Font.Gotham; label.TextSize = 9; label.Text = GetText(data.labelKey); label.Parent = btn
+    SidebarButtons[i] = {btn = btn, page = data.page, labelKey = data.labelKey, label = label}
+    btn.MouseButton1Click:Connect(function()
+        STATE.CurrentPage = data.page
+        for j, sb in ipairs(SidebarButtons) do sb.btn.BackgroundColor3 = (j == i) and COL.SidebarActive or COL.Sidebar end
+        for j, pg in ipairs(Pages) do pg.Visible = (j == data.page) end
+    end)
+end
+
+local ToggleButtons = {}
+local function CreateToggle(parent, textKey, key, order)
+    local btn = Instance.new("TextButton")
+    btn.Name = key
+    btn.LayoutOrder = order
+    btn.Size = UDim2.new(1, 0, 0, 34)
+    btn.BackgroundColor3 = COL.BGOff
+    btn.TextColor3 = COL.OFF
+    btn.Font = Enum.Font.Gotham
+    btn.TextSize = 11
+    btn.Text = GetText(textKey)
+    btn.TextXAlignment = Enum.TextXAlignment.Left
+    btn.BorderSizePixel = 0
+    btn.AutoButtonColor = false
+    btn.Parent = parent
+    Corner(6, btn)
+    Padding(10, 10, 0, 0, btn)
+    local dot = Instance.new("Frame"); dot.Name = "Dot"; dot.Size = UDim2.new(0, 7, 0, 7); dot.Position = UDim2.new(1, -10, 0.5, -3); dot.BackgroundColor3 = COL.OFF; dot.BorderSizePixel = 0; dot.ZIndex = 5; dot.Parent = btn; Corner(4, dot)
+    ToggleButtons[key] = {btn = btn, dot = dot, key = key, textKey = textKey}
+    return btn
+end
+
+CreateToggle(Pages[1], "Aimbot", "Aimbot", 1)
+CreateToggle(Pages[1], "Hitboxes", "Hitboxes", 2)
+CreateToggle(Pages[2], "Glow", "Glow", 1)
+CreateToggle(Pages[2], "Tracers", "Tracers", 2)
+CreateToggle(Pages[2], "NamesESP", "NamesESP", 3)
+CreateToggle(Pages[3], "AntiFreeze", "AntiFreeze", 1)
+CreateToggle(Pages[3], "Fly", "Fly", 2)
+CreateToggle(Pages[3], "BunnyHop", "BunnyHop", 3)
+CreateToggle(Pages[3], "InfJump", "InfJump", 4)
+CreateToggle(Pages[4], "Spinbot", "Spinbot", 1)
+CreateToggle(Pages[4], "NoClip", "NoClip", 2)
+
+local LangButton = Instance.new("TextButton")
+LangButton.Name = "LangButton"
+LangButton.Size = UDim2.new(0, 120, 0, 30)
+LangButton.Position = UDim2.new(1, -130, 0, 8)
+LangButton.BackgroundColor3 = COL.BG2
+LangButton.TextColor3 = COL.TextPrimary
+LangButton.Font = Enum.Font.Gotham
+LangButton.TextSize = 10
+LangButton.Text = GetText("LangToggle")
+LangButton.BorderSizePixel = 0
+LangButton.Parent = TitleBar
+Corner(6, LangButton)
+
+local function RefreshToggle(key)
+    local ref = ToggleButtons[key]
+    if not ref then return end
+    local on = TOGGLE[key]
+    TweenService:Create(ref.btn, TweenInfo.new(0.13, Enum.EasingStyle.Quad), {BackgroundColor3 = on and COL.BGOn or COL.BGOff, TextColor3 = on and COL.ON or COL.OFF}):Play()
+    TweenService:Create(ref.dot, TweenInfo.new(0.13), {BackgroundColor3 = on and COL.ON or COL.OFF}):Play()
+end
+
+local function UpdateLanguage()
+    TitleLabel.Text = GetText("Title")
+    Footer.Text = GetText("Footer")
+    LangButton.Text = GetText("LangToggle")
+    for i, sb in ipairs(SidebarButtons) do sb.label.Text = GetText(sb.labelKey) end
+    for key, ref in pairs(ToggleButtons) do ref.btn.Text = GetText(ref.textKey) end
+end
+
+local function ToggleLanguage()
+    LANG = (LANG == "EN") and "RU" or "EN"
+    UpdateLanguage()
+end
+
+LangButton.MouseButton1Click:Connect(function()
+    ToggleLanguage()
+end)
+
+local function NewTracerLine()
+    local ln = Drawing.new("Line")
+    ln.Visible = false
+    ln.Thickness = CFG.TracerThick
+    ln.Color = COL.TracerColor
+    ln.Transparency = 1
+    ln.ZIndex = 5
+    TracerLines[#TracerLines + 1] = ln
+    return ln
+end
+local function DestroyAllTracers()
+    for i = 1, #TracerLines do pcall(function() TracerLines[i]:Remove() end) end
+    TracerLines = {}
+end
+
+RunService:BindToRenderStep("RiflisTracers_V1", Enum.RenderPriority.Camera.Value + 1, function()
+    DestroyAllTracers()
+    if not TOGGLE.Tracers then return end
+    local svp = Cam.ViewportSize
+    local origin = V2(svp.X * 0.5, svp.Y)
+    for _, pl in ipairs(Players:GetPlayers()) do
+        if pl == LP then continue end
+        local char = pl.Character
+        if not char then continue end
+        local root = char:FindFirstChild("HumanoidRootPart")
+        if not root then continue end
+        if LPRoot then
+            local d = root.Position - LPRoot.Position
+            if d.X * d.X + d.Y * d.Y + d.Z * d.Z > (CFG.TracerMaxDist * CFG.TracerMaxDist) then continue end
+        end
+        local vp, onScreen = Cam:WorldToViewportPoint(root.Position)
+        if not onScreen or vp.Z <= 0 then continue end
+        local ln = NewTracerLine()
+        ln.From = origin
+        ln.To = V2(vp.X, vp.Y)
+        ln.Visible = true
+    end
+end)
+
+local function CreateNameLabel(pl)
+    if NameLabels[pl] then return NameLabels[pl] end
+    local txt = Drawing.new("Text")
+    txt.Visible = false
+    txt.Center = true
+    txt.Outline = true
+    txt.Color = COL.ESPText
+    txt.OutlineColor = COL.ESPOutline
+    txt.Size = CFG.NameSize
+    txt.Font = 2
+    txt.Text = pl.DisplayName or pl.Name
+    txt.ZIndex = 10
+    NameLabels[pl] = txt
+    return txt
+end
+local function DestroyNameLabel(pl)
+    local txt = NameLabels[pl]
+    if txt then pcall(function() txt:Remove() end); NameLabels[pl] = nil end
+end
+local function DestroyAllNameLabels()
+    for pl, txt in pairs(NameLabels) do pcall(function() txt:Remove() end) end
+    NameLabels = {}
+end
+local function HideAllNameLabels()
+    for _, txt in pairs(NameLabels) do pcall(function() txt.Visible = false end) end
+end
+
+RunService:BindToRenderStep("RiflisNames_V1", Enum.RenderPriority.Camera.Value + 3, function()
+    if not TOGGLE.NamesESP then HideAllNameLabels(); return end
+    local seen = {}
+    for _, pl in ipairs(Players:GetPlayers()) do
+        if pl == LP then continue end
+        seen[pl] = true
+        local char = pl.Character
+        if not char then local lbl = NameLabels[pl]; if lbl then lbl.Visible = false end; continue end
+        local head = char:FindFirstChild("Head")
+        if not head then local lbl = NameLabels[pl]; if lbl then lbl.Visible = false end; continue end
+        if LPRoot then
+            local d = head.Position - LPRoot.Position
+            if d.X * d.X + d.Y * d.Y + d.Z * d.Z > (CFG.NameMaxDist * CFG.NameMaxDist) then local lbl = NameLabels[pl]; if lbl then lbl.Visible = false end; continue end
+        end
+        local worldPos = head.Position + V3(0, CFG.NameOffsetY, 0)
+        local vpPos, onScreen = Cam:WorldToViewportPoint(worldPos)
+        if not onScreen or vpPos.Z <= 0 then local lbl = NameLabels[pl]; if lbl then lbl.Visible = false end; continue end
+        local lbl = NameLabels[pl] or CreateNameLabel(pl)
+        lbl.Text = pl.DisplayName or pl.Name
+        lbl.Position = V2(vpPos.X, vpPos.Y)
+        lbl.Visible = true
+    end
+    for pl, _ in pairs(NameLabels) do if not seen[pl] then DestroyNameLabel(pl) end end
+end)
+
+local function GetAimPos(pl)
+    local c = pl.Character
+    if not c then return nil end
+    local head = c:FindFirstChild("Head")
+    if head then return head.Position end
+    local root = c:FindFirstChild("HumanoidRootPart")
+    return root and root.Position or nil
+end
+local function IsAlive(pl)
+    local c = pl.Character
+    if not c then return false end
+    local h = c:FindFirstChildOfClass("Humanoid")
+    return h ~= nil and h.Health > 0
+end
+local function FindAimTarget(lPos)
+    local best, bsq = nil, CFG.AimMaxDist * CFG.AimMaxDist
+    local camCF = Cam.CFrame
+    local fovRad = math.rad(CFG.AimFOV * 0.5)
+    for _, pl in ipairs(Players:GetPlayers()) do
+        if pl == LP then continue end
+        if pl.Team ~= nil and LP.Team ~= nil and pl.Team == LP.Team then continue end
+        if not IsAlive(pl) then continue end
+        local rp = GetAimPos(pl)
+        if not rp then continue end
+        local dx = rp.X - lPos.X
+        local dy = rp.Y - lPos.Y
+        local dz = rp.Z - lPos.Z
+        local dsq = dx * dx + dy * dy + dz * dz
+        if dsq > bsq then continue end
+        local tv = rp - camCF.Position
+        if tv.Magnitude < 0.01 then continue end
+        local dot = camCF.LookVector:Dot(tv.Unit)
+        local angle = math.acos(math.clamp(dot, -1, 1))
+        if angle < fovRad then best = pl; bsq = dsq end
+    end
+    return best
+end
+
+RunService:BindToRenderStep("RiflisAimbot_V1", Enum.RenderPriority.Camera.Value + 2, function()
+    pcall(function()
+        local rmbHeld = UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2)
+        if not TOGGLE.Aimbot or not rmbHeld then AimTarget = nil; return end
+        local lChar = LP.Character
+        if not lChar then return end
+        local lRoot = lChar:FindFirstChild("HumanoidRootPart")
+        if not lRoot then return end
+        local lPos = lRoot.Position
+        if AimTarget then
+            local hp = GetAimPos(AimTarget)
+            if not hp or not IsAlive(AimTarget) then AimTarget = nil else
+                local dx = hp.X - lPos.X
+                local dy = hp.Y - lPos.Y
+                local dz = hp.Z - lPos.Z
+                if dx * dx + dy * dy + dz * dz > (CFG.AimBreakDist * CFG.AimBreakDist) then AimTarget = nil end
+            end
+        end
+        if not AimTarget then AimTarget = FindAimTarget(lPos) end
+        if AimTarget then
+            local ap = GetAimPos(AimTarget)
+            if ap then Cam.CFrame = CFrame.lookAt(Cam.CFrame.Position, ap) end
+        end
+    end)
+end)
+
+local function BuildHL(char)
+    for _, o in ipairs(char:GetChildren()) do if o:IsA("Highlight") then pcall(function() o:Destroy() end) end end
+    local hl = Instance.new("Highlight")
+    hl.FillColor = COL.GlowFill
+    hl.OutlineColor = COL.GlowOutline
+    hl.FillTransparency = 0.5
+    hl.OutlineTransparency = 0
+    hl.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+    hl.Enabled = true
+    hl.Adornee = char
+    hl.Parent = char
+    return hl
+end
+local function ApplyHL(pl)
+    if pl == LP then return end
+    local c = pl.Character
+    if not c then return end
+    HighlightRefs[pl] = BuildHL(c)
+end
+local function RemoveHL(pl)
+    local hl = HighlightRefs[pl]
+    if hl then pcall(function() if hl.Parent then hl:Destroy() end end); HighlightRefs[pl] = nil end
+    local c = pl.Character
+    if c then for _, o in ipairs(c:GetChildren()) do if o:IsA("Highlight") then pcall(function() o:Destroy() end) end end end
+end
+local function SetGlowAll(en)
+    for _, p in ipairs(Players:GetPlayers()) do if p ~= LP then if en then pcall(ApplyHL, p) else pcall(RemoveHL, p) end end end
+end
+
+local function StripSelBox(pl)
+    local sb = HitboxSelBox[pl]
+    if sb then pcall(function() if sb.Parent then sb:Destroy() end end); HitboxSelBox[pl] = nil end
+    local c = pl.Character
+    if c then local head = c:FindFirstChild("Head"); if head then for _, o in ipairs(head:GetChildren()) do if o:IsA("SelectionBox") and o.Name == "RiflisSB" then pcall(function() o:Destroy() end) end end end end
+end
+local function MakeSelBox(pl, head)
+    StripSelBox(pl)
+    local sb = Instance.new("SelectionBox")
+    sb.Name = "RiflisSB"
+    sb.Color3 = COL.HitboxColor
+    sb.LineThickness = 0.06
+    sb.SurfaceTransparency = 0.65
+    sb.SurfaceColor3 = COL.HitboxColor
+    sb.Adornee = head
+    sb.Parent = head
+    HitboxSelBox[pl] = sb
+end
+local function ScaleHead(part, en)
+    if not part or not part:IsA("BasePart") then return end
+    if en then
+        if not HitboxOrig[part] then HitboxOrig[part] = {sz = part.Size, tr = part.Transparency, cc = part.CanCollide, ms = part.Massless, ct = part.CanTouch, an = part.Anchored} end
+        part.Size = HitboxOrig[part].sz * CFG.HitboxScale
+        part.Transparency = 1
+        part.CanCollide = false
+        part.Massless = true
+        part.CanTouch = true
+        part.Anchored = false
+    else
+        local d = HitboxOrig[part]
+        if d then part.Size = d.sz; part.Transparency = d.tr; part.CanCollide = d.cc; part.Massless = d.ms; part.CanTouch = d.ct; part.Anchored = d.an; HitboxOrig[part] = nil end
+    end
+end
+local function ApplyHBXChar(pl, char, en)
+    if not char then return end
+    local head = char:FindFirstChild("Head")
+    if en then if head then ScaleHead(head, true); MakeSelBox(pl, head) end else if head then ScaleHead(head, false) end; StripSelBox(pl) end
+end
+local function SetHitboxAll(en)
+    for _, p in ipairs(Players:GetPlayers()) do if p ~= LP then if en then if p.Character then ApplyHBXChar(p, p.Character, true) end else ApplyHBXChar(p, p.Character, false); StripSelBox(p) end end end
+end
+
+local function RecoverFromAntiFreeze()
+    pcall(function()
+        local c = LP.Character
+        if not c then return end
+        local hum = c:FindFirstChildOfClass("Humanoid")
+        if not hum then return end
+        hum:ChangeState(1)
+        hum.PlatformStand = false
+        local root = c:FindFirstChild("HumanoidRootPart")
+        if root then root.Anchored = false end
+        Workspace.Gravity = 196.2
+    end)
+end
+local function StartSharedHB()
+    if SharedHBConn then return end
+    SharedHBConn = RunService.Heartbeat:Connect(function()
+        pcall(function()
+            local c = LP.Character
+            if not c then return end
+            local root = c:FindFirstChild("HumanoidRootPart")
+            local hum = c:FindFirstChildOfClass("Humanoid")
+            if not root or not hum then return end
+            root.Anchored = false
+            hum.PlatformStand = false
+            local state = hum:GetState()
+            if state == Enum.HumanoidStateType.Physics or state == Enum.HumanoidStateType.Seated then hum:ChangeState(Enum.HumanoidStateType.Running) end
+            if TOGGLE.AntiFreeze then
+                local descendants = c:GetDescendants()
+                for i = 1, #descendants do local v = descendants[i]; if v:IsA("BasePart") then v.Anchored = false end end
+                hum:ChangeState(11)
+                hum.PlatformStand = false
+                local md = hum.MoveDirection
+                local speed = (STATE.GameState == "Lobby") and CFG.AFreezeLobby or CFG.AFreezeRound
+                if UserInputService:IsKeyDown(KC.LeftShift) and STATE.GameState == "Lobby" then speed = CFG.AFreezeSprint end
+                if md.Magnitude > 0 then root.CFrame = root.CFrame + (md * speed) end
+                if UserInputService:IsKeyDown(KC.Space) then
+                    local vy = root.Velocity.Y
+                    if vy < 1 and vy > -1 then root.Velocity = V3(0, CFG.AFreezeJump, 0) end
+                end
+            end
+            if TOGGLE.BunnyHop then
+                if hum.FloorMaterial == Enum.Material.Air then
+                    local md = hum.MoveDirection
+                    if md.Magnitude > 0.1 then local flat = V3(md.X, 0, md.Z); if flat.Magnitude > 0.01 then local dir = flat.Unit; root.AssemblyLinearVelocity = V3(dir.X * CFG.BHopPower, root.AssemblyLinearVelocity.Y, dir.Z * CFG.BHopPower) end end
+                else if hum.WalkSpeed ~= 16 then hum.WalkSpeed = 16 end end
+            end
+        end)
+    end)
+end
+StartSharedHB()
+LP.CharacterAdded:Connect(function() task.wait(0.1); StartSharedHB() end)
+
+local function EnableFly()
+    local c = LP.Character
+    if not c then return end
+    local r = c:FindFirstChild("HumanoidRootPart")
+    if not r then return end
+    local h = c:FindFirstChildOfClass("Humanoid")
+    if h then h.PlatformStand = true end
+    if FlyBV then FlyBV:Destroy() end
+    FlyBV = Instance.new("BodyVelocity")
+    FlyBV.MaxForce = V3(CFG.FlyForce, CFG.FlyForce, CFG.FlyForce)
+    FlyBV.Velocity = V3(0, 0, 0)
+    FlyBV.Parent = r
+    if FlyConn then FlyConn:Disconnect() end
+    FlyConn = RunService.Heartbeat:Connect(function()
+        if not FlyBV or not FlyBV.Parent then return end
+        local cf = Cam.CFrame
+        local dir = V3(0, 0, 0)
+        local UIS = UserInputService
+        if UIS:IsKeyDown(KC.W) then dir = dir + cf.LookVector end
+        if UIS:IsKeyDown(KC.S) then dir = dir - cf.LookVector end
+        if UIS:IsKeyDown(KC.A) then dir = dir - cf.RightVector end
+        if UIS:IsKeyDown(KC.D) then dir = dir + cf.RightVector end
+        if UIS:IsKeyDown(KC.Space) then dir = dir + V3(0, 1, 0) end
+        if UIS:IsKeyDown(KC.LeftControl) then dir = dir - V3(0, 1, 0) end
+        local sp = UIS:IsKeyDown(KC.LeftShift) and CFG.FlySprint or 1
+        if dir.Magnitude > 0 then FlyBV.Velocity = dir.Unit * CFG.FlySpeed * sp else FlyBV.Velocity = V3(0, 0, 0) end
+    end)
+end
+local function DisableFly()
+    if FlyConn then FlyConn:Disconnect(); FlyConn = nil end
+    if FlyBV then FlyBV:Destroy(); FlyBV = nil end
+    local c = LP.Character
+    if not c then return end
+    local h = c:FindFirstChildOfClass("Humanoid")
+    if h then h.PlatformStand = false end
+end
+LP.CharacterAdded:Connect(function() if TOGGLE.Fly then task.wait(0.5); pcall(EnableFly) end end)
+
+local ncTick = 0
+local function StepNC()
+    if not TOGGLE.NoClip then return end
+    ncTick = ncTick + 1
+    if ncTick < 2 then return end
+    ncTick = 0
+    local c = LP.Character
+    if not c then return end
+    for _, p in ipairs(c:GetDescendants()) do if p:IsA("BasePart") then p.CanCollide = false end end
+end
+local function RestoreCollide()
+    local c = LP.Character
+    if not c then return end
+    for _, p in ipairs(c:GetDescendants()) do if p:IsA("BasePart") then p.CanCollide = true end end
+end
+RunService.RenderStepped:Connect(function() pcall(StepNC) end)
+
+local function EnableIJ()
+    if InfJumpConn then return end
+    InfJumpConn = UserInputService.JumpRequest:Connect(function()
+        local c = LP.Character
+        if not c then return end
+        local h = c:FindFirstChildOfClass("Humanoid")
+        if h and h:GetState() ~= Enum.HumanoidStateType.Dead then h:ChangeState(Enum.HumanoidStateType.Jumping) end
+    end)
+end
+local function DisableIJ()
+    if InfJumpConn then InfJumpConn:Disconnect(); InfJumpConn = nil end
+end
+
+local function ToggleFeature(key)
+    TOGGLE[key] = not TOGGLE[key]
+    local on = TOGGLE[key]
+    RefreshToggle(key)
+    
+    if key == "Aimbot" then if not on then AimTarget = nil end
+    elseif key == "Hitboxes" then pcall(SetHitboxAll, on)
+    elseif key == "Glow" then pcall(SetGlowAll, on)
+    elseif key == "Tracers" then if not on then DestroyAllTracers() end
+    elseif key == "NamesESP" then if not on then pcall(DestroyAllNameLabels) end
+    elseif key == "AntiFreeze" then if not on then pcall(RecoverFromAntiFreeze) end
+    elseif key == "Fly" then if on then pcall(EnableFly) else pcall(DisableFly) end
+    elseif key == "BunnyHop" then if not on then local c = LP.Character; if c then local h = c:FindFirstChildOfClass("Humanoid"); if h then h.WalkSpeed = 16 end end end
+    elseif key == "InfJump" then if on then EnableIJ() else DisableIJ() end
+    elseif key == "Spinbot" then if on then pcall(EnableSpinbot) else pcall(DisableSpinbot) end
+    elseif key == "NoClip" then if not on then pcall(RestoreCollide) end
+    end
+end
+
+for key, ref in pairs(ToggleButtons) do
+    ref.btn.MouseButton1Click:Connect(function() 
+        if not MainFrame.Visible then return end
+        ToggleFeature(key) 
+    end)
+end
+
+local function SetMenu(vis)
+    STATE.MenuOpen = vis
+    MainFrame.Visible = vis
+    MainFrame.Active = vis
+    MainFrame.Draggable = vis
+    MainFrameStroke.Enabled = vis
+end
+
+local function SwitchToPage(pageNum)
+    if pageNum < 1 or pageNum > 4 then return end
+    STATE.CurrentPage = pageNum
+    for i, pg in ipairs(Pages) do pg.Visible = (i == pageNum) end
+    for i, sb in ipairs(SidebarButtons) do sb.btn.BackgroundColor3 = (i == pageNum) and COL.SidebarActive or COL.Sidebar end
+end
+
+UserInputService.InputBegan:Connect(function(inp, gpe)
+    if gpe then return end
+    if UserInputService:GetFocusedTextBox() then return end
+    
+    pcall(function()
+        if inp.KeyCode == KEYS.ToggleMenu then SetMenu(not STATE.MenuOpen); return end
+        if not MainFrame.Visible then return end
+        
+        if inp.KeyCode == KEYS.LangToggle then ToggleLanguage(); return end
+        if inp.KeyCode == KEYS.Tab1 then SwitchToPage(1); return end
+        if inp.KeyCode == KEYS.Tab2 then SwitchToPage(2); return end
+        if inp.KeyCode == KEYS.Tab3 then SwitchToPage(3); return end
+        if inp.KeyCode == KEYS.Tab4 then SwitchToPage(4); return end
+        if inp.KeyCode == KEYS.Spinbot then ToggleFeature("Spinbot"); return end
+        if inp.KeyCode == KEYS.Glow then ToggleFeature("Glow"); return end
+        if inp.KeyCode == KEYS.Tracers then ToggleFeature("Tracers"); return end
+        if inp.KeyCode == KEYS.Aimbot then ToggleFeature("Aimbot"); return end
+        if inp.KeyCode == KEYS.Hitboxes then ToggleFeature("Hitboxes"); return end
+        if inp.KeyCode == KEYS.NamesESP then ToggleFeature("NamesESP"); return end
+        if inp.KeyCode == KEYS.AntiFreeze then ToggleFeature("AntiFreeze"); return end
+        if inp.KeyCode == KEYS.Fly then ToggleFeature("Fly"); return end
+        if inp.KeyCode == KEYS.BunnyHop then ToggleFeature("BunnyHop"); return end
+        if inp.KeyCode == KEYS.InfJump then ToggleFeature("InfJump"); return end
+        if inp.KeyCode == KEYS.NoClip then ToggleFeature("NoClip"); return end
+    end)
+end)
+
+task.spawn(function()
+    for _, p in ipairs(Players:GetPlayers()) do
+        if p ~= LP then
+            if TOGGLE.Glow and p.Character then pcall(ApplyHL, p) end
+            if TOGGLE.Hitboxes and p.Character then pcall(ApplyHBXChar, p, p.Character, true) end
+            p.CharacterAdded:Connect(function(char)
+                task.wait(0.1)
+                if TOGGLE.Glow then pcall(function() HighlightRefs[p] = BuildHL(char) end) end
+                if TOGGLE.Hitboxes then pcall(ApplyHBXChar, p, char, true) end
+            end)
+            p.CharacterRemoving:Connect(function()
+                HighlightRefs[p] = nil
+                DestroyNameLabel(p)
+            end)
+        end
+    end
+end)
+
+Players.PlayerAdded:Connect(function(p)
+    if p == LP then return end
+    p.CharacterAdded:Connect(function(char)
+        task.wait(0.1)
+        if TOGGLE.Glow then pcall(function() HighlightRefs[p] = BuildHL(char) end) end
+        if TOGGLE.Hitboxes then pcall(ApplyHBXChar, p, char, true) end
+    end)
+    p.CharacterRemoving:Connect(function()
+        HighlightRefs[p] = nil
+        DestroyNameLabel(p)
+    end)
+end)
+
+Players.PlayerRemoving:Connect(function(p)
+    pcall(RemoveHL, p)
+    pcall(ApplyHBXChar, p, p.Character, false)
+    pcall(DestroyNameLabel, p)
+end)
+
+LP.CharacterAdded:Connect(function(char)
+    task.wait(0.3)
+    if TOGGLE.Fly then task.wait(0.2); pcall(EnableFly) end
+    if TOGGLE.Spinbot then task.wait(0.2); pcall(EnableSpinbot) end
+end)
+
+SG.AncestryChanged:Connect(function(_, par)
+    if par then return end
+    pcall(function() RunService:UnbindFromRenderStep("RiflisTracers_V1") end)
+    pcall(function() RunService:UnbindFromRenderStep("RiflisAimbot_V1") end)
+    pcall(function() RunService:UnbindFromRenderStep("RiflisNames_V1") end)
+    if SharedHBConn then SharedHBConn:Disconnect(); SharedHBConn = nil end
+    if SpinbotConn then SpinbotConn:Disconnect(); SpinbotConn = nil end
+    pcall(DestroyAllTracers)
+    pcall(DestroyAllNameLabels)
+    pcall(RecoverFromAntiFreeze)
+    pcall(DisableSpinbot)
+    pcall(function() 
+        for _, p in ipairs(Players:GetPlayers()) do 
+            if p ~= LP then 
+                pcall(RemoveHL, p)
+                pcall(ApplyHBXChar, p, p.Character, false)
+            end 
+        end 
+    end)
+    pcall(RestoreCollide)
+    pcall(DisableFly)
+    pcall(DisableIJ)
+end)
+
+task.wait(0.5)
+ShowWelcomeNotification()
