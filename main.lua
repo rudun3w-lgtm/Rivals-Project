@@ -21,7 +21,7 @@ for _, userId in ipairs(whitelistData.AllowedUsers) do
 end
 
 if not isWhitelisted then
-    LP:Kick("No Access")
+    print("Access Denied")
     return
 end
 
